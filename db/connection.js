@@ -16,6 +16,7 @@ const ChallengeSchema = new mongoose.Schema(
   {
     title: String,
     creator: String,
+    type: String,
     // expDate: Date,
     expired: Boolean,
     submissions: [EntrySchema]

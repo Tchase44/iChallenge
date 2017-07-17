@@ -2,6 +2,7 @@
 	{
 	"title": "Best Nic Cage Photo",
    "creator": "T",
+   "type": "photo",
    "expired": false,
    "submissions": [
    	{
@@ -23,6 +24,7 @@
 	{
 	"title": "Best Haiku About Food",
    "creator": "T",
+   "type": "text",
    "expired": false,
    "submissions": [
    	{
@@ -33,7 +35,7 @@
 		"video_url": null,
 		"photo_url": null
 		},{
-		"title": "Comort Food",
+		"title": "Comfort Food",
 		"author": "Totally_Not_Yoshi",
 		"content": "Sizzling bacon,for lots of mash'd potatoes,beside the big steak.",
 		"desc": null,
@@ -51,6 +53,7 @@
 	{
 	"title": "Best Scare Video",
    "creator": "T",
+   "type": "video",
    "expired": false,
    "submissions": [
    	{
