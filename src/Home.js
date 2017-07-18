@@ -11,6 +11,19 @@ import PhotoIndex from './components/PhotoIndex'
 import TextIndex from './components/TextIndex'
 
 class Home extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state={
+  //     comps:[]
+  //   } 
+  // }
+  // componentDidMount() {
+  //   axios.get("http://localhost:3001/api/all").then((res)=>{
+  //     this.setState={
+  //       comps: res.data
+  //     }
+  //   })
+  // }
   render() {
     return (
       <Router>
@@ -22,11 +35,11 @@ class Home extends Component {
           <Link to="/Photo">Photo</Link>
         </div>
         <Route 
-          path="/Video"
-          render={()=>{
-            return <VideoIndex />
-          }}
-        />
+            path="/Video"
+            render={()=>{
+              return <VideoIndex />
+            }}
+          />
         <Route 
           path="/Text"
           render={()=>{
@@ -39,7 +52,6 @@ class Home extends Component {
             return <PhotoIndex />
           }}
         />
-
       </div>
       </Router>
     );
@@ -47,3 +59,12 @@ class Home extends Component {
 }
 
 export default Home;
+
+
+
+
+
+
+
+
+

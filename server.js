@@ -12,8 +12,13 @@ app.use(parser.json({extended:true}))
 app.use(parser.urlencoded({ extended: true }))
 
 // app.use("/assets",express.static("public"))
-
-
+/**
+{
+  "main": "index.js",
+  "keywords": [],
+  "license": "ISC",
+}
+**/
 //view engine
 app.set('views', __dirname + '/src');
 app.set('view engine', 'jsx');

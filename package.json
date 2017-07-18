@@ -1,6 +1,8 @@
 {
-  "name": "src",
+  "name": "iChallenge-v1",
   "version": "0.1.0",
+  "description": "",
+  "author": "Tchase44",
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
@@ -20,3 +22,4 @@
     "eject": "react-scripts eject"
   }
 }
+
