@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="challengeMe">
+<head>
+	<title>iChallenge</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+<!-- angularJS -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+  <!-- JavaScript -->
+  <script src="/assets/js/app.js"></script>
+  <!-- locationProvider -->
+  <base href="/" />
+</head>
+<body>
+	<noscript>
+      You need to enable JavaScript to run this app.
+  </noscript>
+  <nav class="navbar">
+  <a ui-sref="Home">Home</a>
+  <a ui-sref="index({type: 'video'})">Video</a>
+  <a ui-sref="index({type: 'text'})">Text</a>
+  <a ui-sref="index({type: 'photo'})">Photo</a>
+</nav>
+  <main ui-view></main>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+	<h2>{{vmShow.contest.title}}</h2>
+<div ng-if="vmShow.contest.type == 'video'" class="videoShow"  >
+	<div ng-repeat="subs in vmShow.contest.submissions" >
+		<h4>{{subs.title}}</h4>
+		<p>{{subs.author}}</p>
+		<a href="{{subs.video_url}}">{{subs.video_url}}</a>
+		<iframe src="{{subs.video_url}}" ></iframe>
+	</div>
+</div>
+
+
+<div ng-if="vmShow.contest.type == 'text'" class="textShow" >
+	<div ng-repeat="subs in vmShow.contest.submissions">
+		{{subs.title}}
+		{{subs.author}}
+		{{subs.content}}
+	</div>
+</div>
+
+
+<div ng-if="vmShow.contest.type == 'photo'" class="photoShow"  >
+	<div ng-repeat="subs in vmShow.contest.submissions" >
+		<img src="{{subs.photo_url}}" />
+		<div>
+			<p>{{subs.title}}</p>
+			<p>{{subs.author}}</p>
+			<p>{{subs.desc}}</p>
+		</div>
+	</div>
+</div>
+
+
+

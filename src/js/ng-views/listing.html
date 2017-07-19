@@ -1,0 +1,16 @@
+<div>
+	<header>
+		<h2>{{vmIdx.stuff.type}} Challenges</h2>
+
+	</header>
+	<main>
+		<div ng-repeat="challenges in vmIdx.contests">
+			<div ng-if="challenges.type == vmIdx.stuff.type">
+				<a ui-sref="show({type : challenges.type, id : challenges._id})">
+					<h3>{{challenges.title}}</h3>
+					<p>{{challenges.creator}}</p>
+				</a>
+			</div>
+		</div>
+	</main>
+</div>

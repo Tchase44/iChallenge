@@ -11,21 +11,12 @@ app.set("port", process.env.PORT || 3001)
 app.use(parser.json({extended:true}))
 app.use(parser.urlencoded({ extended: true }))
 
-// app.use("/assets",express.static("public"))
-/**
-{
-  "main": "index.js",
-  "keywords": [],
-  "license": "ISC",
-}
-**/
-//view engine
-app.set('views', __dirname + '/src');
-app.set('view engine', 'jsx');
-app.engine('jsx', require('express-react-views').createEngine());
+app.use("/assets",express.static("src"))
+
+
 
 // API routes
-app.get("/api/all", function(req, res){
+app.get("/api/challenge", function(req, res){
   Challenge.find({})
   		.then(function(Challenge){
   		res.json(Challenge)
@@ -64,7 +55,7 @@ app.put("/api/challenge/:type/:id", function(req,res){
 })
 
 app.get("/*", function(req, res){
-  res.sendFile(__dirname + "/public/404.html");
+  res.sendFile(__dirname + "/src/public/index.html");
 });
 
 
