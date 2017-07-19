@@ -67,10 +67,12 @@ app.listen(app.get("port"),function(){
 
 
 
-// // add sub doc
+// add sub doc
 // function addItem(resturant, item){
 //   Restaurant.findOne({name: resturant}, function(err, docs){
-//     docs.items.push(new MenuItem({title: item}))
+//     docs.items.push(new MenuItem({
+//     											title: item
+//     										}))
 //     docs.save(function(err, results){
 //       if(err){
 //         console.log(err)

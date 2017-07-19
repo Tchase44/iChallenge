@@ -105,7 +105,6 @@ function ShowCtrlFun($state, $stateParams, Contest ) {
   this.addEntry=()=>{
   	this.currentContest.submissions.push(this.entry)
   	this.currentContest.$update({type: $stateParams.type,id: $stateParams.id}).then((contest)=>{
-      console.log(contest)
       $state.reload()
     })
   }

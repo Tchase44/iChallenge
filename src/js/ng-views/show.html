@@ -7,13 +7,23 @@
 	<div ng-repeat="subs in vmShow.currentContest.submissions" >
 		<h4>{{subs.title}}</h4>
 		<p>{{subs.author}}</p>
-		<a href="{{subs.video_url}}">{{subs.video_url}}</a>
-		<iframe src="{{subs.video_url}}" ></iframe>
+		<a href="{{subs.video_url}}">{{subs.video_url}}</a><span ng-click="vmShow.destroyEntry($index)">X</span>
+		<iframe width="560" height="315" frameborder="0" src="{{subs.video_url}}" ></iframe>
 	</div>
 	<div>
-			<form>
+		<h4>Enter Contest</h4>
+		<form>
+			<input placeholder="title" type="text" ng-model="vmShow.entry.title" />
+			<input placeholder="author" type="text" ng-model="vmShow.entry.author" />
+			<input placeholder="video_url" type="text" ng-model="vmShow.entry.video_url" />
+			<button ng-click="vmShow.addEntry()">Enter Now!!!</button>
+		</form>
+	</div>
+	<div ng-click="vmShow.hide = !vmShow.hide">Edit Contest</div>
+	<div ng-show="vmShow.hide">
+			<form ng-submit="vmShow.update()">
 				<input type="text" ng-model="vmShow.currentContest.title" >
-				<button ng-click="vmShow.update()">Submit Update</button>
+				<button type="submit">Submit Update</button>
 			</form>
 		<div ng-click="vmShow.destroy()">Remove Contest!</div>
 	</div>
