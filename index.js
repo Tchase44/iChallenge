@@ -16,45 +16,45 @@ app.use("/assets",express.static("src"))
 
 
 // API routes
-app.get("/api/challenge", function(req, res){
+app.get("/api/challenge", (req, res)=>{
   Challenge.find({})
   		.then(function(Challenge){
   		res.json(Challenge)
   })
 });
-app.get("/api/challenge/:type", function(req,res){
+app.get("/api/challenge/:type", (req,res)=>{
 	Challenge.find({type: req.params.type})
 		.then(function(challenge){
 			res.json(challenge)
 	})
 })
-app.get("/api/challenge/:type/:id",function(req,res){
+app.get("/api/challenge/:type/:id",(req,res)=>{
 	Challenge.findOne({_id: req.params.id})
 		.then(function(challenge){
 			res.json(challenge)
 		})
 })
-app.post("/api/challenge",function(req,res){
+app.post("/api/challenge",(req,res)=>{
 	Challenge.create(req.body)
 		.then(function(newChallenge){
 			console.log(req.body )
 			res.json(newChallenge)
 		})
 })
-app.delete("/api/challenge/:type/:id", function(req,res){
+app.put("/api/challenge/:type/:id", (req,res)=>{
+	Challenge.findOneAndUpdate({type: req.params.type, _id: req.params.id}, req.body, {new: true})
+		.then(function(challenge){
+				res.json(challenge)
+		})
+})
+app.delete("/api/challenge/:type/:id", (req,res)=>{
 	Challenge.findOneAndRemove({_id: req.params.id})
 		.then(function(){
 				res.json({success: true})
 		})
 })
-app.put("/api/challenge/:type/:id", function(req,res){
-	Challenge.findOneAndUpdate({_id: req.params.id})
-		.then(function(challenge){
-				res.json(challenge)
-		})
-})
 
-app.get("/*", function(req, res){
+app.get("/*", (req, res)=>{
   res.sendFile(__dirname + "/src/public/index.html");
 });
 

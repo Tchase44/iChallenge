@@ -1,7 +1,20 @@
 <div>
 	<header>
 		<h2>{{vmIdx.stuff.type}} Challenges</h2>
-
+		<h3 ng-if="vmIdx.error">{{vmIdx.error}}</h3>
+		<div ng-click="vmIdx.hide = !vmIdx.hide">Start a Challenge</div>
+		<div ng-show="vmIdx.hide">
+			<form>
+				<input type="text" placeholder="Title" ng-model="vmIdx.newContest.title" >
+				<input type="text" placeholder="Author" ng-model="vmIdx.newContest.creator" >
+				<select type="text" placeholder="Type of Challenge" ng-model="vmIdx.newContest.type">
+					<option value="photo" >photo</option>
+					<option value="video" >video</option>
+					<option value="text" >text</option>
+				</select>
+				<button ng-if="vmIdx.newContest.type" ng-click="vmIdx.create()">Make It Happen!</button>
+			</form>
+		</div>
 	</header>
 	<main>
 		<div ng-repeat="challenges in vmIdx.contests">

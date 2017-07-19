@@ -1,32 +1,81 @@
 
-	<h2>{{vmShow.contest.title}}</h2>
-<div ng-if="vmShow.contest.type == 'video'" class="videoShow"  >
-	<div ng-repeat="subs in vmShow.contest.submissions" >
+	<h2>{{vmShow.currentContest.title}}</h2>
+
+	<!-- Video Contest Template -->
+
+<div ng-if="vmShow.currentContest.type == 'video'" class="videoShow"  >
+	<div ng-repeat="subs in vmShow.currentContest.submissions" >
 		<h4>{{subs.title}}</h4>
 		<p>{{subs.author}}</p>
 		<a href="{{subs.video_url}}">{{subs.video_url}}</a>
 		<iframe src="{{subs.video_url}}" ></iframe>
 	</div>
-</div>
-
-
-<div ng-if="vmShow.contest.type == 'text'" class="textShow" >
-	<div ng-repeat="subs in vmShow.contest.submissions">
-		{{subs.title}}
-		{{subs.author}}
-		{{subs.content}}
+	<div>
+			<form>
+				<input type="text" ng-model="vmShow.currentContest.title" >
+				<button ng-click="vmShow.update()">Submit Update</button>
+			</form>
+		<div ng-click="vmShow.destroy()">Remove Contest!</div>
 	</div>
 </div>
 
+<!-- Text Contest Template -->
 
-<div ng-if="vmShow.contest.type == 'photo'" class="photoShow"  >
-	<div ng-repeat="subs in vmShow.contest.submissions" >
+<div ng-if="vmShow.currentContest.type == 'text'" class="textShow" >
+	<div ng-repeat="subs in vmShow.currentContest.submissions">
+		<div>{{subs.title}}
+		{{subs.author}}</div>
+		<p>{{subs.content}}<span ng-click="vmShow.destroyEntry($index)">X</span></p>
+	</div>
+	<div>
+		<h4>Enter Contest</h4>
+		<form>
+			<input placeholder="title" type="text" ng-model="vmShow.entry.title" />
+			<input placeholder="author" type="text" ng-model="vmShow.entry.author" />
+			<input placeholder="content" type="text" ng-model="vmShow.entry.content" />
+			<button ng-click="vmShow.addEntry()">Enter Now!!!</button>
+		</form>
+	</div>
+	<div ng-click="vmShow.hide = !vmShow.hide">Edit Contest</div>
+	<div ng-show="vmShow.hide">
+			<form ng-submit="vmShow.update()">
+				<input type="text" ng-model="vmShow.currentContest.title" >
+				<button type="submit">Submit Update</button>
+			</form>
+		<div ng-click="vmShow.destroy()">Remove Contest!</div>
+	</div>
+</div>
+
+<!-- Photo Contest Template -->
+
+<div ng-if="vmShow.currentContest.type == 'photo'" class="photoShow"  >
+	<div ng-repeat="subs in vmShow.currentContest.submissions" >
 		<img src="{{subs.photo_url}}" />
 		<div>
 			<p>{{subs.title}}</p>
 			<p>{{subs.author}}</p>
 			<p>{{subs.desc}}</p>
 		</div>
+	</div>
+	<div>
+	<div>
+		<h4>Enter Contest</h4>
+		<form>
+			<input placeholder="title" type="text" ng-model="vmShow.entry.title" />
+			<input placeholder="author" type="text" ng-model="vmShow.entry.author" />
+			<input placeholder="desc" type="text" ng-model="vmShow.entry.desc" />
+			<input placeholder="photo_url" type="text" ng-model="vmShow.entry.photo_url" />
+			<button ng-click="vmShow.addEntry()">Enter Now!!!</button>
+		</form>
+	</div>
+	<div ng-click="vmShow.hide = !vmShow.hide">Edit Contest</div>
+	<div ng-show="vmShow.hide">
+			<form ng-submit="vmShow.update()">
+				<input type="text" ng-model="vmShow.currentContest.title" >
+				<button type="submit">Submit Update</button>
+			</form>
+		<div ng-click="vmShow.destroy()">Remove Contest!</div>
+	</div>
 	</div>
 </div>
 
