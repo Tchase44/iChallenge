@@ -104,9 +104,7 @@ function ShowCtrlFun($state, $stateParams, Contest ) {
 
   this.addEntry=()=>{
   	this.currentContest.submissions.push(this.entry)
-  	this.currentContest.$update({type: $stateParams.type,id: $stateParams.id}).then((contest)=>{
-      $state.reload()
-    })
+  	this.update()
   }
   this.editEntry =()=>{
 
@@ -114,11 +112,18 @@ function ShowCtrlFun($state, $stateParams, Contest ) {
   this.destroyEntry=(idx)=>{
   	 console.log('clicky')
   	 this.currentContest.submissions.splice(idx,1)
-    this.currentContest.$update({type: $stateParams.type, id: $stateParams.id}).then(()=>{
-      $state.reload()
-    })
+    this.destroy()
   }
-
+   this.upVote=(idx)=>{
+   	console.log('up')
+   	this.currentContest.submissions[idx].votes += 1
+   	this.update()
+   }
+   this.downVote=(idx)=>{
+   	console.log('down')
+   	this.currentContest.submissions[idx].votes -= 1
+   	this.update()
+   }
 }
 
 

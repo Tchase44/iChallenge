@@ -8,7 +8,8 @@ const EntrySchema = new mongoose.Schema(
 			content: String,
 			desc: String,
 			video_url: String,
-			photo_url: String
+			photo_url: String,
+			votes: Number
 		}
 	)
 

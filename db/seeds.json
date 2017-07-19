@@ -11,14 +11,16 @@
 		"content": null,
 		"desc": "Obvi the best pic there is",
 		"video_url": null,
-		"photo_url": "http://placecage.com/200/200"
+		"photo_url": "http://placecage.com/200/200",
+		"votes": 0
 		},{
 		"title": "This should Win",
 		"author": "BowserOnVacay",
 		"content": null,
 		"desc": "vote vote vote",
 		"video_url": null,
-		"photo_url": "http://placecage.com/300/300"
+		"photo_url": "http://placecage.com/300/300",
+		"votes": 0
 		}]
 	},
 	{
@@ -33,21 +35,24 @@
 		"content": "Tender artichoke, Reveals its succulent heart, to prying fingers. -Georgia Terrell, Houston",
 		"desc": null,
 		"video_url": null,
-		"photo_url": null
+		"photo_url": null,
+		"votes": 0
 		},{
 		"title": "Comfort Food",
 		"author": "Totally_Not_Yoshi",
 		"content": "Sizzling bacon,for lots of mash'd potatoes,beside the big steak.",
 		"desc": null,
 		"video_url": null,
-		"photo_url": null
+		"photo_url": null,
+		"votes": 0
 		},{
 		"title": "The Cake is True!",
 		"author": "Goku",
 		"content": "Epic, epic fail. I guess I'll have more cake, then. Maybe not so bad.",
 		"desc": null,
 		"video_url": null,
-		"photo_url": null
+		"photo_url": null,
+		"votes": 0
 		}]
 	},
 	{
@@ -62,14 +67,16 @@
 		"content": null,
 		"desc": null,
 		"video_url": "https://youtu.be/vaMxIKAyPXg",
-		"photo_url": null
+		"photo_url": null,
+		"votes": 0
 		},{
 		"title": "Classic Mannequin",
 		"author": "mike_myers",
 		"content": null,
 		"desc": null,
 		"video_url": "https://youtu.be/kF08A5seqV4",
-		"photo_url": null
+		"photo_url": null,
+		"votes": 0
 		}]
 	}
 ]

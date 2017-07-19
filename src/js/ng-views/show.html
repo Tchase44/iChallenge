@@ -7,7 +7,12 @@
 	<div ng-repeat="subs in vmShow.currentContest.submissions" >
 		<h4>{{subs.title}}</h4>
 		<p>{{subs.author}}</p>
-		<a href="{{subs.video_url}}">{{subs.video_url}}</a><span ng-click="vmShow.destroyEntry($index)">X</span>
+		<span>
+			{{subs.votes}}
+			<span ng-click="vmShow.upVote($index)">[+1]</span>
+			<span ng-click="vmShow.downVote($index)">[-1]</span>
+		</span>
+		<a href="{{subs.video_url}}">{{subs.video_url}}</a>
 		<iframe width="560" height="315" frameborder="0" src="{{subs.video_url}}" ></iframe>
 	</div>
 	<div>
@@ -36,6 +41,11 @@
 		<div>{{subs.title}}
 		{{subs.author}}</div>
 		<p>{{subs.content}}<span ng-click="vmShow.destroyEntry($index)">X</span></p>
+		<span>
+			{{subs.votes}}
+			<span ng-click="vmShow.upVote($index)">[+1]</span>
+			<span ng-click="vmShow.downVote($index)">[-1]</span>
+		</span>
 	</div>
 	<div>
 		<h4>Enter Contest</h4>
@@ -65,6 +75,10 @@
 			<p>{{subs.title}}</p>
 			<p>{{subs.author}}</p>
 			<p>{{subs.desc}}</p>
+			<span>{{subs.votes}}
+				<span ng-click="vmShow.upVote($index)">[+1]</span>
+				<span ng-click="vmShow.downVote($index)">[-1]</span>
+			</span>
 		</div>
 	</div>
 	<div>
