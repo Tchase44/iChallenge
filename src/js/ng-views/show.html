@@ -4,17 +4,28 @@
 	<!-- Video Contest Template -->
 
 <div ng-if="vmShow.currentContest.type == 'video'" class="videoShow"  >
-	<div ng-repeat="subs in vmShow.currentContest.submissions" >
-		<h4>{{subs.title}}</h4>
-		<p>{{subs.author}}</p>
-		<span>
-			{{subs.votes}}
-			<span ng-click="vmShow.upVote($index)">[+1]</span>
-			<span ng-click="vmShow.downVote($index)">[-1]</span>
-		</span>
-		<a href="{{subs.video_url}}">{{subs.video_url}}</a>
-		<iframe width="560" height="315" frameborder="0" src="{{subs.video_url}}" ></iframe>
+	<div class="showBox">
+		<iframe  ng-src="{{vmShow.clickedEntry}}" ></iframe>
 	</div>
+<div class="scrollBox">
+	<div class="entryContainer" ng-repeat="subs in vmShow.currentContest.submissions" >
+		<div class="entry" ng-click="vmShow.featMe($index)">
+			<div class="info" >
+				<h3>{{subs.title}}</h3>
+				<p>by: {{subs.author}}</p>
+				<a href="{{subs.video_url}}">{{subs.video_url}}</a>
+			</div>
+			<div class="votes" >
+				<p>{{subs.votes}}</p>
+				<p>
+					<span ng-click="vmShow.upVote($index)">[+1]</span>
+					<span ng-click="vmShow.downVote($index)">[-1]</span>
+				</p>
+				<p ng-click="vmShow.destroyEntry($index)">X</p>
+			</div>
+		</div>
+	</div>
+</div>
 	<div>
 		<h4>Enter Contest</h4>
 		<form>
@@ -37,16 +48,27 @@
 <!-- Text Contest Template -->
 
 <div ng-if="vmShow.currentContest.type == 'text'" class="textShow" >
-	<div ng-repeat="subs in vmShow.currentContest.submissions">
-		<div>{{subs.title}}
-		{{subs.author}}</div>
-		<p>{{subs.content}}<span ng-click="vmShow.destroyEntry($index)">X</span></p>
-		<span>
-			{{subs.votes}}
-			<span ng-click="vmShow.upVote($index)">[+1]</span>
-			<span ng-click="vmShow.downVote($index)">[-1]</span>
-		</span>
+	<div class="showBox">
+		<div class="textEntryContent"><h3>{{vmShow.clickedEntry}}</h3></div>
 	</div>
+<div class="scrollBox">
+	<div class="entryContainer" ng-repeat="subs in vmShow.currentContest.submissions">
+		<div class="entry" ng-click="vmShow.featMe($index)">
+			<div class="info" >
+				<h3>{{subs.title}}</h3>
+				<p>by: {{subs.author}}</p>
+			</div>
+			<div class="votes" >
+				<p>{{subs.votes}}</p>
+				<p>
+					<span ng-click="vmShow.upVote($index)">[+1]</span>
+					<span ng-click="vmShow.downVote($index)">[-1]</span>
+				</p>
+				<p ng-click="vmShow.destroyEntry($index)">X</p>
+			</div>
+		</div>
+	</div>
+</div>
 	<div>
 		<h4>Enter Contest</h4>
 		<form>
@@ -69,19 +91,30 @@
 <!-- Photo Contest Template -->
 
 <div ng-if="vmShow.currentContest.type == 'photo'" class="photoShow"  >
-	<div ng-repeat="subs in vmShow.currentContest.submissions" >
-		<img src="{{subs.photo_url}}" />
-		<div>
-			<p>{{subs.title}}</p>
-			<p>{{subs.author}}</p>
-			<p>{{subs.desc}}</p>
-			<span>{{subs.votes}}
-				<span ng-click="vmShow.upVote($index)">[+1]</span>
-				<span ng-click="vmShow.downVote($index)">[-1]</span>
-			</span>
+	<div class="showBox">
+		<img  ng-src="{{vmShow.clickedEntry}}" >
+	</div>
+<div class="scrollBox">
+	<div class="entryContainer" ng-repeat="subs in vmShow.currentContest.submissions" >
+		<!-- <img src="{{subs.photo_url}}" /> -->
+		<div class="entry"  ng-click="vmShow.featMe($index)" >
+			<div class="info" >
+				<h3>{{subs.title}}</h3>
+				<p>by: {{subs.author}}</p>
+				<p>{{subs.desc}}</p>
+			</div>
+			<div class="votes" >
+				<p>{{subs.votes}}</p>
+				<p>
+					<span ng-click="vmShow.upVote($index)">[+1]</span>
+					<span ng-click="vmShow.downVote($index)">[-1]</span>
+				</p>
+				<p ng-click="vmShow.destroyEntry($index)">X</p>
+			</div>
 		</div>
 	</div>
-	<div>
+</div>
+	<div >
 	<div>
 		<h4>Enter Contest</h4>
 		<form>

@@ -88,6 +88,10 @@ function ShowCtrlFun($state, $stateParams, Contest ) {
 // model for new entry
   this.entry = {title: null,author: null,content: null,desc: null,video_url: null,photo_url: null}
 
+  //
+  this.clickedEntry = this.featMe
+
+
   this.update = ()=>{
   		// console.log('update fun exe')
     this.currentContest.$update({type: $stateParams.type,id: $stateParams.id}).then((contest) => {
@@ -113,6 +117,21 @@ function ShowCtrlFun($state, $stateParams, Contest ) {
   	 console.log('clicky')
   	 this.currentContest.submissions.splice(idx,1)
     this.destroy()
+  }
+  this.featMe=(idx)=>{
+  	 switch (this.currentContest.type){
+  	 	case "photo":
+  	 		this.clickedEntry = this.currentContest.submissions[idx].photo_url
+  	 		break;
+  	 	case "text":
+  	 		this.clickedEntry = this.currentContest.submissions[idx].content
+  	 		break;
+  	 	case "video":
+  	 		this.clickedEntry = this.currentContest.submissions[idx].video_url
+  	 		break;
+  	 	default:
+  	 		console.log('error')
+  	 }
   }
    this.upVote=(idx)=>{
    	console.log('up')
