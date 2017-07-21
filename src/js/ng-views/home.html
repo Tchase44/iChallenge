@@ -1,13 +1,13 @@
 
 <div class="container">
 
-  <div class="feat vid" ng-repeat="challenge in vmHome.contests" >
-    <div>
+  <div class="feat" ng-repeat="challenge in vmHome.contests" >
+    
       <a ui-sref="show({type : challenge.type, id : challenge._id})">
       <h3 >{{challenge.title}}</h3>
       <p>Created by: {{challenge.creator}}</p>
       </a>
-    </div><!-- 
+    <!-- 
     <div class="feat pic" ng-if="challenge.type == 'photo'">
       <a ui-sref="show({type : challenge.type, id : challenge._id})">
       <h3 >{{challenge.title}}</h3>
