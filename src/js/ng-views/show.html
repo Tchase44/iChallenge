@@ -91,11 +91,13 @@
 <!-- Photo Contest Template -->
 
 <div ng-if="vmShow.currentContest.type == 'photo'" class="photoShow"  >
+
 	<div class="showBox">
 		<img  ng-src="{{vmShow.clickedEntry}}" >
 	</div>
+	
 <div class="scrollBox">
-	<div class="entryContainer" ng-repeat="subs in vmShow.currentContest.submissions | orderBy : 'votes' : true " >
+	<div class="entryContainer" ng-repeat="subs in vmShow.currentContest.submissions >
 		<!-- <img src="{{subs.photo_url}}" /> -->
 		<div class="entry"  ng-click="vmShow.featMe($index)" >
 			<div class="info" >

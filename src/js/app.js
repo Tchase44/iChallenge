@@ -4,7 +4,6 @@ angular
 .module("challengeMe", [
   "ui.router",
   "ngResource"
-  // "ngSanitize"
 ])
 .config([
   "$stateProvider",
@@ -19,14 +18,12 @@ angular
 .controller("IndexController", [
   "$state",
   "$stateParams",
-  // "$sce",
   "Contest",
    IndexControllerFunction
 ])
 .controller("ShowController", [
   "$state",
   "$stateParams",
-  // "$sce",
   "Contest",
   ShowCtrlFun
 ])
@@ -34,16 +31,7 @@ angular
 	"Contest",
 	HomeCtrlFun
 	])
-// .directive("iframeDirective",["$src","url",iFrameDirFun])
-// .directive('iframeDirective', ['$sce', function($sce) {
-//   return {
-//     restrict: 'E',
-//     template: '<iframe src="{{ trustedUrl }}" frameborder="0" allowfullscreen></iframe>',
-//     link: function(scope) {
-//       scope.trustedUrl = $sce.trustAsResourceUrl();
-//     }
-//   }
-// }])
+
 function Router($stateProvider, $locationProvider,$sceProvider) {
 	$sceProvider.enabled(false);
   $locationProvider.html5Mode(true);
@@ -75,6 +63,7 @@ function ContestFactory ($resource) {
 }
 
 function HomeCtrlFun(Contest){
+  // find all the constest
 	this.contests = Contest.query()
 }
 
@@ -104,7 +93,7 @@ function ShowCtrlFun($state, $stateParams, Contest) {
 // model for new entry
   this.entry = {title: null,author: null,content: null,desc: "no description needed",video_url: null,photo_url: null,votes: 0}
 
-  //
+  //value to pass to the view
   this.clickedEntry = null;
 
   this.update = ()=>{
@@ -133,6 +122,7 @@ function ShowCtrlFun($state, $stateParams, Contest) {
   	 this.currentContest.submissions.splice(idx,1)
     this.update()
   }
+  //selected entry will populate the show box
   this.featMe=(idx)=>{
   	 switch (this.currentContest.type){
   	 	case "photo":
@@ -148,6 +138,7 @@ function ShowCtrlFun($state, $stateParams, Contest) {
   	 		console.log('error')
   	 }
   }
+  // add votes to entries
    this.upVote=(idx)=>{
    	console.log('up')
    	this.currentContest.submissions[idx].votes += 1
