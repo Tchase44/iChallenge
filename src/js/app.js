@@ -102,7 +102,7 @@ function ShowCtrlFun($state, $stateParams, Contest) {
   this.currentContest = Contest.get({type: $stateParams.type, id: $stateParams.id})
   this.currentType = $stateParams.type
 // model for new entry
-  this.entry = {title: null,author: null,content: null,desc: null,video_url: null,photo_url: null}
+  this.entry = {title: null,author: null,content: null,desc: "no description needed",video_url: null,photo_url: null,votes: 0}
 
   //
   this.clickedEntry = null;

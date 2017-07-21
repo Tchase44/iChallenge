@@ -5,7 +5,9 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Style Sheets -->
-    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/w3css.css">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One|Racing+Sans+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
 <!-- angularJS -->
@@ -24,13 +26,19 @@
       You need to enable JavaScript to run this app.
   </noscript>
   <a id="home" ui-sref="Home"><h1>iChallenge</h1></a>
-  <nav class="navbar">
-    <div class="pretty" ><a ui-sref="index({type: 'video'})">Video Contests</a></div>
-    <div class="pretty" ><a ui-sref="index({type: 'text'})">Text Contests</a></div>
-    <div class="pretty" ><a ui-sref="index({type: 'photo'})">Photo Contests</a></div>
+  <nav class="w3-row w3-blue">
+    <div class="w3-button w3-third w3-container bt" >
+      <a ui-sref="index({type: 'video'})">Video Contests</a>
+    </div>
+    <div class="w3-button w3-third w3-container bt" >
+      <a ui-sref="index({type: 'text'})">Text Contests</a>
+    </div>
+    <div class="w3-button w3-third w3-container bt" >
+      <a ui-sref="index({type: 'photo'})">Photo Contests</a>
+    </div>
   </nav>
   <main ui-view></main>
-    <footer>
+    <footer class="w3-container ">
       <p>&copy; Tim Chase 2017</p>
     </footer>
 </body>

@@ -2,46 +2,42 @@
    Home Page Styles
 */
 
-#home{
+a#home>h1{
+	font-family: 'Patua One', cursive;
 	text-align: center;
-	font-size: 150%;
+	font-size: 440%;
+	color: #f2552c;
+   text-shadow: -2px 3px 1px #000;
+}
+h1:hover{
+	animation: colorChange 2s infinite;
 }
 a{
 	cursor: pointer;
 	text-decoration: none;
 }
 
-nav, .container{
+.container{
 	width: 100%;
-	/*margin: 0 auto;*/
+	padding: 0 10px;
 }
-nav > div {
-	display: inline-block;
-	width: 32%;
-	text-align: center;
+.bt {
 	font-size: 150%;
 	height: 60px;
-	/*border: 1px solid black;*/
-	border-radius: 10px;
-	box-shadow: 0px 1px 5px black;
+	border-top: 2px solid darkblue;
+}
 
-}
-.feat{
-	text-align: center;
-}
-/*.pretty{
-	background: linear-gradient(rgb(125, 218, 86),rgb(128, 128, 128));
-}
-.pretty>a{
-	color: #fff;
-	text-shadow: 1px 1px black;
-}
-.pretty:hover{
-	background: linear-gradient(rgb(128, 128, 128),rgb(125, 218, 86));
-}*/
 /*
-	listing page Styles
+	Contest Listing Styles
 */
+.feat{
+	padding: 2px;
+	box-shadow: 1px 1px 3px #000;
+}
+.feat:hover{
+	background: rgba(246, 209, 85, 0.75);
+}
+
 main{
 	width: 100%;
 	margin: 5px auto;
@@ -50,9 +46,9 @@ main{
 main div{
 	width: 100%;
 }
-.entryList{
-	text-align: center;
-	border: 1px solid #000;
+
+h2{
+	font-family: 'Racing Sans One', cursive;
 }
 
 /* 
@@ -61,7 +57,7 @@ main div{
 
 .showBox{
 	width: 75%;
-	max-width: 75%;
+	max-width: 445px;
    min-height: 40vh;
    margin: 10px auto;
    /*border-radius: 10px;*/
@@ -80,6 +76,9 @@ main div{
 	width: 100%;
 	border-bottom: 1px solid black;
 }
+.entry:hover{
+	background: rgba(246, 209, 85, 0.75)
+}
 .votes{
 	display: inline-block;
 	width:49%;
@@ -88,12 +87,16 @@ main div{
 .info{
 	display: inline-block;
 	width:49%;
-	/*float:;*/
+	line-height: 0.5;
 }
 .scrollBox{
-	height: 30vh;
-	overflow: scroll;
-	border: 1px solid black;
+	 height: 30vh;
+    width: 89%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 3px;
+    border: 1px solid black;
+    overflow: scroll;
 }
 /*
   Text Show Box
@@ -123,6 +126,12 @@ footer{
 	.entryList{
 		text-align: left;
 	}
+}
+
+@keyframes colorChange{
+	0%{color: #f2552c;}
+	50%{color: #f6d155;}
+	100%{color: #f2552c;}
 }
 /*
 gold
