@@ -21,3 +21,7 @@ Additional actions users should be able to do
 
 [pic]: https://imagebin.ca/v/3U9qKW4RRNsv.jpeg
 
+It started with and idea and a memory, idea was originally a live feed challenge site. That was simplified to the current set up.
+A design sketch was made... [pic]
+and then work started...
+
