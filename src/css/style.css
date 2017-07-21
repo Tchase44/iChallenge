@@ -49,6 +49,9 @@ main div{
 h2{
 	font-family: 'Racing Sans One', cursive;
 }
+nav{
+	box-shadow: 0px 2px 6px black;
+}
 
 /* 
   Show Page Styles 
