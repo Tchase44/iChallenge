@@ -17,5 +17,7 @@ Additional actions users should be able to do
 - Vote on entries
 - Edit/Delere their own entry and created Challenges
 
-### 
+### The Process
+
+![alt text](https://imagebin.ca/v/3U9qKW4RRNsv)
 
