@@ -1,7 +1,7 @@
 <div>
 	<header>
-		<h2>{{vmIdx.stuff.type}} Challenges</h2>
-		<h3 ng-if="vmIdx.error">{{vmIdx.error}}</h3>
+		<h2>{{vmIdx.stuff.type }} Challenges</h2>
+		
 		<div ng-click="vmIdx.hide = !vmIdx.hide">Start a Challenge</div>
 		<div ng-show="vmIdx.hide">
 			<form>
@@ -18,10 +18,10 @@
 	</header>
 	<main>
 		<div ng-repeat="challenges in vmIdx.contests">
-			<div ng-if="challenges.type == vmIdx.stuff.type">
+			<div class="entryList" ng-if="challenges.type == vmIdx.stuff.type">
 				<a ui-sref="show({type : challenges.type, id : challenges._id})">
 					<h3>{{challenges.title}}</h3>
-					<p>{{challenges.creator}}</p>
+					<p>Created by: {{challenges.creator}}</p>
 				</a>
 			</div>
 		</div>

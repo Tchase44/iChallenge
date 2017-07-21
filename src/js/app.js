@@ -1,12 +1,15 @@
+
 (function(){
 angular
 .module("challengeMe", [
   "ui.router",
   "ngResource"
+  // "ngSanitize"
 ])
 .config([
   "$stateProvider",
   "$locationProvider",
+  "$sceProvider",
    Router
 ])
 .factory("Contest", [
@@ -16,12 +19,14 @@ angular
 .controller("IndexController", [
   "$state",
   "$stateParams",
+  // "$sce",
   "Contest",
    IndexControllerFunction
 ])
 .controller("ShowController", [
   "$state",
   "$stateParams",
+  // "$sce",
   "Contest",
   ShowCtrlFun
 ])
@@ -29,7 +34,18 @@ angular
 	"Contest",
 	HomeCtrlFun
 	])
-function Router($stateProvider, $locationProvider) {
+// .directive("iframeDirective",["$src","url",iFrameDirFun])
+// .directive('iframeDirective', ['$sce', function($sce) {
+//   return {
+//     restrict: 'E',
+//     template: '<iframe src="{{ trustedUrl }}" frameborder="0" allowfullscreen></iframe>',
+//     link: function(scope) {
+//       scope.trustedUrl = $sce.trustAsResourceUrl();
+//     }
+//   }
+// }])
+function Router($stateProvider, $locationProvider,$sceProvider) {
+	$sceProvider.enabled(false);
   $locationProvider.html5Mode(true);
   $stateProvider
   .state("Home", {
@@ -79,7 +95,7 @@ function IndexControllerFunction($state, $stateParams, Contest ) {
   }
 }
 
-function ShowCtrlFun($state, $stateParams, Contest ) {
+function ShowCtrlFun($state, $stateParams, Contest) {
 // super secret form hider
   this.hide = false
 // gets single contest
@@ -89,13 +105,12 @@ function ShowCtrlFun($state, $stateParams, Contest ) {
   this.entry = {title: null,author: null,content: null,desc: null,video_url: null,photo_url: null}
 
   //
-  this.clickedEntry = this.featMe
-
+  this.clickedEntry = null;
 
   this.update = ()=>{
   		// console.log('update fun exe')
     this.currentContest.$update({type: $stateParams.type,id: $stateParams.id}).then((contest) => {
-      console.log(contest)
+
       $state.reload()
     })
   }
@@ -110,13 +125,13 @@ function ShowCtrlFun($state, $stateParams, Contest ) {
   	this.currentContest.submissions.push(this.entry)
   	this.update()
   }
-  this.editEntry =()=>{
+  // this.editEntry =()=>{
 
-  }
+  // }
   this.destroyEntry=(idx)=>{
   	 console.log('clicky')
   	 this.currentContest.submissions.splice(idx,1)
-    this.destroy()
+    this.update()
   }
   this.featMe=(idx)=>{
   	 switch (this.currentContest.type){
@@ -146,4 +161,7 @@ function ShowCtrlFun($state, $stateParams, Contest ) {
 }
 
 
+
 })()
+
+

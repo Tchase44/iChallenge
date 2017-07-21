@@ -12,7 +12,7 @@
 		"desc": "Obvi the best pic there is",
 		"video_url": null,
 		"photo_url": "http://placecage.com/200/200",
-		"votes": 0
+		"votes": 1
 		},{
 		"title": "This should Win",
 		"author": "BowserOnVacay",
@@ -20,7 +20,7 @@
 		"desc": "vote vote vote",
 		"video_url": null,
 		"photo_url": "http://placecage.com/300/300",
-		"votes": 0
+		"votes": 3
 		}]
 	},
 	{
@@ -66,7 +66,7 @@
 		"author": "Jason",
 		"content": null,
 		"desc": null,
-		"video_url": "https://youtu.be/vaMxIKAyPXg",
+		"video_url": "https://youtube.com/embed/vaMxIKAyPXg",
 		"photo_url": null,
 		"votes": 0
 		},{
@@ -74,7 +74,7 @@
 		"author": "mike_myers",
 		"content": null,
 		"desc": null,
-		"video_url": "https://youtu.be/kF08A5seqV4",
+		"video_url": "https://youtube.com/embed/kF08A5seqV4",
 		"photo_url": null,
 		"votes": 0
 		}]

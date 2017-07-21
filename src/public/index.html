@@ -4,12 +4,15 @@
 	<title>iChallenge</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <!-- Style Sheets -->
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/reset.css"> -->
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
 <!-- angularJS -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js"></script> -->
 
   <!-- JavaScript -->
   <script src="/assets/js/app.js"></script>
@@ -20,13 +23,15 @@
 	<noscript>
       You need to enable JavaScript to run this app.
   </noscript>
+  <a id="home" ui-sref="Home"><h1>iChallenge</h1></a>
   <nav class="navbar">
-  <a ui-sref="Home">Home</a>
-  <a ui-sref="index({type: 'video'})">Video</a>
-  <a ui-sref="index({type: 'text'})">Text</a>
-  <a ui-sref="index({type: 'photo'})">Photo</a>
-</nav>
+    <div class="pretty" ><a ui-sref="index({type: 'video'})">Video Contests</a></div>
+    <div class="pretty" ><a ui-sref="index({type: 'text'})">Text Contests</a></div>
+    <div class="pretty" ><a ui-sref="index({type: 'photo'})">Photo Contests</a></div>
+  </nav>
   <main ui-view></main>
-    
+    <footer>
+      <p>&copy; Tim Chase 2017</p>
+    </footer>
 </body>
 </html>
