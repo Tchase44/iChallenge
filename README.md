@@ -18,6 +18,7 @@ Additional actions users should be able to do
 - Edit/Delere their own entry and created Challenges
 
 ## Unrealized Features
+- Editing of Entries/Challenges
 - User Auth
 - Profiles
 - Ranking system based on points gained from voting on entries,entering/placing/createing challenges
