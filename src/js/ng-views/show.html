@@ -28,17 +28,17 @@
 </div>
 	<div>
 		<h4>Enter Contest</h4>
-		<form>
-			<input placeholder="title" type="text" ng-model="vmShow.entry.title" />
-			<input placeholder="author" type="text" ng-model="vmShow.entry.author" />
-			<input placeholder="video_url" type="text" ng-model="vmShow.entry.video_url" />
+		<form class="w3-container">
+			<input class="w3-input" placeholder="title" type="text" ng-model="vmShow.entry.title" />
+			<input class="w3-input" placeholder="author" type="text" ng-model="vmShow.entry.author" />
+			<input class="w3-input" placeholder="video_url" type="text" ng-model="vmShow.entry.video_url" />
 			<button ng-click="vmShow.addEntry()">Enter Now!!!</button>
 		</form>
 	</div>
 	<div ng-click="vmShow.hide = !vmShow.hide">Edit Contest</div>
 	<div ng-show="vmShow.hide">
-			<form ng-submit="vmShow.update()">
-				<input type="text" ng-model="vmShow.currentContest.title" >
+			<form class="w3-container" ng-submit="vmShow.update()">
+				<input class="w3-input" type="text" ng-model="vmShow.currentContest.title" >
 				<button type="submit">Submit Update</button>
 			</form>
 		<div ng-click="vmShow.destroy()">Remove Contest!</div>
@@ -71,17 +71,17 @@
 </div>
 	<div>
 		<h4>Enter Contest</h4>
-		<form>
-			<input placeholder="title" type="text" ng-model="vmShow.entry.title" />
-			<input placeholder="author" type="text" ng-model="vmShow.entry.author" />
-			<input placeholder="content" type="textarea" ng-model="vmShow.entry.content" />
+		<form class="w3-container">
+			<input class="w3-input" placeholder="title" type="text" ng-model="vmShow.entry.title" />
+			<input class="w3-input" placeholder="author" type="text" ng-model="vmShow.entry.author" />
+			<input class="w3-input" placeholder="content" type="textarea" ng-model="vmShow.entry.content" />
 			<button ng-click="vmShow.addEntry()">Enter Now!!!</button>
 		</form>
 	</div>
 	<div ng-click="vmShow.hide = !vmShow.hide">Edit Contest</div>
 	<div ng-show="vmShow.hide">
-			<form ng-submit="vmShow.update()">
-				<input type="text" ng-model="vmShow.currentContest.title" >
+			<form class="w3-container" ng-submit="vmShow.update()">
+				<input class="w3-input" type="text" ng-model="vmShow.currentContest.title" >
 				<button type="submit">Submit Update</button>
 			</form>
 		<div ng-click="vmShow.destroy()">Remove Contest!</div>
@@ -119,18 +119,18 @@
 	<div >
 	<div>
 		<h4>Enter Contest</h4>
-		<form>
-			<input placeholder="title" type="text" ng-model="vmShow.entry.title" />
-			<input placeholder="author" type="text" ng-model="vmShow.entry.author" />
-			<input placeholder="desc" type="text" ng-model="vmShow.entry.desc" />
-			<input placeholder="photo_url" type="text" ng-model="vmShow.entry.photo_url" />
+		<form class="w3-container">
+			<input class="w3-input" placeholder="title" type="text" ng-model="vmShow.entry.title" />
+			<input class="w3-input" placeholder="author" type="text" ng-model="vmShow.entry.author" />
+			<input class="w3-input" placeholder="desc" type="text" ng-model="vmShow.entry.desc" />
+			<input class="w3-input" placeholder="photo_url" type="text" ng-model="vmShow.entry.photo_url" />
 			<button ng-click="vmShow.addEntry()">Enter Now!!!</button>
 		</form>
 	</div>
 	<div ng-click="vmShow.hide = !vmShow.hide">Edit Contest</div>
 	<div ng-show="vmShow.hide">
-			<form ng-submit="vmShow.update()">
-				<input type="text" ng-model="vmShow.currentContest.title" >
+			<form class="w3-container" ng-submit="vmShow.update()">
+				<input class="w3-input" type="text" ng-model="vmShow.currentContest.title" >
 				<button type="submit">Submit Update</button>
 			</form>
 		<div ng-click="vmShow.destroy()">Remove Contest!</div>
